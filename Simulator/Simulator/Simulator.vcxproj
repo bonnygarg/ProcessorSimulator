@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{34D8612C-96AD-4020-A413-6E718E3C14BD}</ProjectGuid>
+    <RootNamespace>Simulator</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\Simulator\Source\;C:\Program Files %28x86%29\LLVM\install\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>"C:\Program Files (x86)\LLVM\install\lib\*.lib" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\CfgGenerator\BlockCfgGenerator.h" />
+    <ClInclude Include="Source\CfgGenerator\MethodCfgGenerator.h" />
+    <ClInclude Include="Source\CfgGenerator\TraceCfgGenerator.h" />
+    <ClInclude Include="Source\Cfg\BasicBlockRecord.h" />
+    <ClInclude Include="Source\Cfg\Cfg.h" />
+    <ClInclude Include="Source\Cfg\MethodRecord.h" />
+    <ClInclude Include="Source\Cfg\NonCompilableOperationRecord.h" />
+    <ClInclude Include="Source\CompilationUnit\CompilationUnit.h" />
+    <ClInclude Include="Source\CompilationUnit\CompiledFunction.h" />
+    <ClInclude Include="Source\CompilationUnit\InterpretedOperation.h" />
+    <ClInclude Include="Source\Compiler\CompiledCode.h" />
+    <ClInclude Include="Source\Compiler\CompiledOperation.h" />
+    <ClInclude Include="Source\Compiler\Compiler.h" />
+    <ClInclude Include="Source\Compiler\SideExit.h" />
+    <ClInclude Include="Source\Decoder\DecoderTableBuilder.h" />
+    <ClInclude Include="Source\IO\IoBridge.h" />
+    <ClInclude Include="Source\Global\Global.h" />
+    <ClInclude Include="Source\IO\IoPeripheral.h" />
+    <ClInclude Include="Source\IO\Mits88Sio.h" />
+    <ClInclude Include="Source\OperationFactory\ByteOperandOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\ConditionalCallOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\ConditionalJumpOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\ConditionalReturnOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\HaltOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\InOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\OutOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\RestartOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\UnconditionalCallOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\UnconditionalJumpOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\UnconditionalReturnOperationFactory.h" />
+    <ClInclude Include="Source\OperationFactory\WordOperandOperationFactory.h" />
+    <ClInclude Include="Source\OperationFunction\OperationFunctions.h" />
+    <ClInclude Include="Source\Operation\ConditionalCallOperation.h" />
+    <ClInclude Include="Source\Operation\ConditionalJumpOperation.h" />
+    <ClInclude Include="Source\Operation\ConditionalReturnOperation.h" />
+    <ClInclude Include="Source\Operation\HaltOperation.h" />
+    <ClInclude Include="Source\Operation\InOperation.h" />
+    <ClInclude Include="Source\Operation\OutOperation.h" />
+    <ClInclude Include="Source\Operation\RestartOperations.h" />
+    <ClInclude Include="Source\Operation\UnconditionalCallOperation.h" />
+    <ClInclude Include="Source\Operation\UnconditionalJumpOperation.h" />
+    <ClInclude Include="Source\Operation\OperationFunctionPointers.h" />
+    <ClInclude Include="Source\Decoder\Decoder.h" />
+    <ClInclude Include="Source\OperationFactory\NoOperandOperationFactory.h" />
+    <ClInclude Include="Source\Operation\ByteOperandOperation.h" />
+    <ClInclude Include="Source\Operation\NoOperandOperation.h" />
+    <ClInclude Include="Source\Operation\Key\OperationKey.h" />
+    <ClInclude Include="Source\Operation\Key\OperationKeyHasher.h" />
+    <ClInclude Include="Source\Operation\Operation.h" />
+    <ClInclude Include="Source\OperationFactory\OperationFactory.h" />
+    <ClInclude Include="Source\Operation\Metadata\OperationMetadata.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\ConditionalCallOutgoingEdges.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\ConditionalJumpOutgoingEdges.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\ConditionalReturnOutgoingEdges.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\NextOutgoingEdges.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\NonCompilableOutgoingEdges.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\NoneOutgoingEdges.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\OutgoingEdges.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\OutgoingEdgesVisitor.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\UnconditionalCallOutgoingEdges.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\UnconditionalJumpOutgoingEdges.h" />
+    <ClInclude Include="Source\Operation\OutgoingEdges\UnconditionalReturnOutgoingEdges.h" />
+    <ClInclude Include="Source\Operation\UnconditionalReturnOperation.h" />
+    <ClInclude Include="Source\Operation\WordOperandOperation.h" />
+    <ClInclude Include="Source\Recorder\RecordedOperation.h" />
+    <ClInclude Include="Source\Recorder\Recorder.h" />
+    <ClInclude Include="Source\Rom\RomLoader.h" />
+    <ClInclude Include="Source\SimulationUnit\BlockCompiler\CompiledBlock.h" />
+    <ClInclude Include="Source\SimulationUnit\BlockCompiler\InterpretedBlockStart.h" />
+    <ClInclude Include="Source\SimulationUnit\MethodCompiler\CompiledMethod.h" />
+    <ClInclude Include="Source\SimulationUnit\MethodCompiler\InterpretedMethodStart.h" />
+    <ClInclude Include="Source\SimulationUnit\SimulationUnit.h" />
+    <ClInclude Include="Source\SimulationUnit\TraceCompiler\CompiledTrace.h" />
+    <ClInclude Include="Source\SimulationUnit\TraceCompiler\InterpretedTraceAnchor.h" />
+    <ClInclude Include="Source\SimulatorEngine\BlockCompiler\BlockCompilerFirstPass.h" />
+    <ClInclude Include="Source\SimulatorEngine\BlockCompiler\BlockCompilerSimulatorEngine.h" />
+    <ClInclude Include="Source\SimulatorEngine\Interpreter\InterpreterSimulatorEngine.h" />
+    <ClInclude Include="Source\SimulatorEngine\MethodCompiler\MethodCompilerFirstPass.h" />
+    <ClInclude Include="Source\SimulatorEngine\MethodCompiler\MethodCompilerSimulatorEngine.h" />
+    <ClInclude Include="Source\SimulatorEngine\SimulatorEngine.h" />
+    <ClInclude Include="Source\SimulatorEngine\TraceCompiler\TraceCompilerFirstPass.h" />
+    <ClInclude Include="Source\SimulatorEngine\TraceCompiler\TraceCompilerSimulatorEngine.h" />
+    <ClInclude Include="Source\State\InterruptType.h" />
+    <ClInclude Include="Source\State\Memory.h" />
+    <ClInclude Include="Source\State\State.h" />
+    <ClInclude Include="Source\Time\Timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\CfgGenerator\BlockCfgGenerator.cpp" />
+    <ClCompile Include="Source\CfgGenerator\MethodCfgGenerator.cpp" />
+    <ClCompile Include="Source\CfgGenerator\TraceCfgGenerator.cpp" />
+    <ClCompile Include="Source\Cfg\BasicBlockRecord.cpp" />
+    <ClCompile Include="Source\Cfg\Cfg.cpp" />
+    <ClCompile Include="Source\Cfg\MethodRecord.cpp" />
+    <ClCompile Include="Source\Cfg\NonCompilableOperationRecord.cpp" />
+    <ClCompile Include="Source\CompilationUnit\CompilationUnit.cpp" />
+    <ClCompile Include="Source\CompilationUnit\CompiledFunction.cpp" />
+    <ClCompile Include="Source\CompilationUnit\InterpretedOperation.cpp" />
+    <ClCompile Include="Source\Compiler\CompiledCode.cpp" />
+    <ClCompile Include="Source\Compiler\CompiledOperation.cpp" />
+    <ClCompile Include="Source\Compiler\Compiler.cpp" />
+    <ClCompile Include="Source\Compiler\SideExit.cpp" />
+    <ClCompile Include="Source\Decoder\Decoder.cpp" />
+    <ClCompile Include="Source\Decoder\DecoderTableBuilder.cpp" />
+    <ClCompile Include="Source\IO\IoBridge.cpp" />
+    <ClCompile Include="Source\IO\Mits88Sio.cpp" />
+    <ClCompile Include="Source\OperationFactory\ByteOperandOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\ConditionalCallOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\ConditionalJumpOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\ConditionalReturnOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\HaltOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\InOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\NoOperandOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\OperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\OutOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\RestartOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\UnconditionalCallOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\UnconditionalJumpOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\UnconditionalReturnOperationFactory.cpp" />
+    <ClCompile Include="Source\OperationFactory\WordOperandOperationFactory.cpp" />
+    <ClCompile Include="Source\Operation\ByteOperandOperation.cpp" />
+    <ClCompile Include="Source\Operation\ConditionalCallOperation.cpp" />
+    <ClCompile Include="Source\Operation\ConditionalJumpOperation.cpp" />
+    <ClCompile Include="Source\Operation\ConditionalReturnOperation.cpp" />
+    <ClCompile Include="Source\Operation\HaltOperation.cpp" />
+    <ClCompile Include="Source\Operation\InOperation.cpp" />
+    <ClCompile Include="Source\Operation\Key\OperationKey.cpp" />
+    <ClCompile Include="Source\Operation\OutOperation.cpp" />
+    <ClCompile Include="Source\Operation\RestartOperations.cpp" />
+    <ClCompile Include="Source\Operation\UnconditionalCallOperation.cpp" />
+    <ClCompile Include="Source\Operation\UnconditionalJumpOperation.cpp" />
+    <ClCompile Include="Source\Operation\NoOperandOperation.cpp" />
+    <ClCompile Include="Source\Operation\Operation.cpp" />
+    <ClCompile Include="Source\Operation\Metadata\OperationMetadata.cpp" />
+    <ClCompile Include="Source\Operation\OutgoingEdges\ConditionalCallOutgoingEdges.cpp" />
+    <ClCompile Include="Source\Operation\OutgoingEdges\ConditionalJumpOutgoingEdges.cpp" />
+    <ClCompile Include="Source\Operation\OutgoingEdges\ConditionalReturnOutgoingEdges.cpp" />
+    <ClCompile Include="Source\Operation\OutgoingEdges\NextOutgoingEdges.cpp" />
+    <ClCompile Include="Source\Operation\OutgoingEdges\NonCompilableOutgoingEdges.cpp" />
+    <ClCompile Include="Source\Operation\OutgoingEdges\NoneOutgoingEdges.cpp" />
+    <ClCompile Include="Source\Operation\OutgoingEdges\UnconditionalCallOutgoingEdges.cpp" />
+    <ClCompile Include="Source\Operation\OutgoingEdges\UnconditionalJumpOutgoingEdges.cpp" />
+    <ClCompile Include="Source\Operation\OutgoingEdges\UnconditionalReturnOutgoingEdges.cpp" />
+    <ClCompile Include="Source\Operation\UnconditionalReturnOperation.cpp" />
+    <ClCompile Include="Source\Operation\WordOperandOperation.cpp" />
+    <ClCompile Include="Source\Recorder\RecordedOperation.cpp" />
+    <ClCompile Include="Source\Recorder\Recorder.cpp" />
+    <ClCompile Include="Source\Rom\RomLoader.cpp" />
+    <ClCompile Include="Source\SimulationUnit\BlockCompiler\CompiledBlock.cpp" />
+    <ClCompile Include="Source\SimulationUnit\BlockCompiler\InterpretedBlockStart.cpp" />
+    <ClCompile Include="Source\SimulationUnit\MethodCompiler\CompiledMethod.cpp" />
+    <ClCompile Include="Source\SimulationUnit\MethodCompiler\InterpretedMethodStart.cpp" />
+    <ClCompile Include="Source\SimulationUnit\TraceCompiler\CompiledTrace.cpp" />
+    <ClCompile Include="Source\SimulationUnit\TraceCompiler\InterpretedTraceAnchor.cpp" />
+    <ClCompile Include="Source\SimulatorEngine\BlockCompiler\BlockCompilerFirstPass.cpp" />
+    <ClCompile Include="Source\SimulatorEngine\BlockCompiler\BlockCompilerSimulatorEngine.cpp" />
+    <ClCompile Include="Source\SimulatorEngine\Interpreter\InterpreterSimulatorEngine.cpp" />
+    <ClCompile Include="Source\SimulatorEngine\MethodCompiler\MethodCompilerFirstPass.cpp" />
+    <ClCompile Include="Source\SimulatorEngine\MethodCompiler\MethodCompilerSimulatorEngine.cpp" />
+    <ClCompile Include="Source\SimulatorEngine\SimulatorEngine.cpp" />
+    <ClCompile Include="Source\SimulatorEngine\TraceCompiler\TraceCompilerFirstPass.cpp" />
+    <ClCompile Include="Source\SimulatorEngine\TraceCompiler\TraceCompilerSimulatorEngine.cpp" />
+    <ClCompile Include="Source\Source.cpp" />
+    <ClCompile Include="Source\Time\Timer.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
